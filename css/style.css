@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #06021b;
+}
+
+.navigation {
+    width: 400px;
+    height: 70px;
+    background-image: linear-gradient(45deg, #2196f3, #e91e63);
+    border-radius: 10px;;
+}
+
+ul {
+    width: 350px;
+}
+
+li {
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+a {
+    font-weight: 500;
+}
+
+
+.icon {
+    line-height: 75px;
+    font-size: 1.5em;
+    transition: 0.3s linear;
+}
+
+li.active .icon {
+    transform: translateY(-28.5px);
+    transition-delay: 0.15s;
+}
+
+.text {
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transform: translateY(20px);
+    transition: 0.3s linear;
+    opacity: 0;
+}
+
+li.active .text {
+    opacity: 1;
+    transform: translateY(15px);
+    transition-delay: 0.15s;
+}
+
+.circle {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 1.8px solid #fff;
+    border-radius: 50%;
+    transform: translateY(0) scale(0);
+    transition: 0.3s linear;
+}
+
+li.active .circle {
+    transform: translateY(-30px) scale(1);
+    transition-delay: 0.15s;
+}
+
+.indicator {
+    width: 70px;
+    height: 70px;
+    background-image: linear-gradient(45deg, #2196f3, #e91e63);
+    top: -50%;
+    border: 6px solid #06021b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s linear;
+}
+
+.indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 1px -10px 0 #06021b;
+}
+
+.indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px 0 #06021b;
+}
+
+li:nth-child(1).active ~ .indicator {
+    transform: translateX(calc(70px * 0));
+}
+
+li:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(70px * 1));
+}
+
+li:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(70px * 2));
+}
+
+li:nth-child(4).active ~ .indicator {
+    transform: translateX(calc(70px * 3));
+}
+
+li:nth-child(5).active ~ .indicator {
+    transform: translateX(calc(70px * 4));
+}
